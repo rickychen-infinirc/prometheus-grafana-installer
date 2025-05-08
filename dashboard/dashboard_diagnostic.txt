@@ -1,0 +1,134 @@
+# 儀表板診斷報告
+
+## GPU 查詢
+1. Name
+   查詢: nvidia_smi_gpu_info{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+2. P-State
+   查詢: nvidia_smi_pstate{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+3. GPU Utilization %
+   查詢: nvidia_smi_utilization_gpu_ratio{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+4. Power Draw %
+   查詢: nvidia_smi_power_draw_watts{uuid="$gpu"} / nvidia_smi_power_default_limit_watts{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+5. Fan Speed %
+   查詢: nvidia_smi_fan_speed_ratio{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+6. Temperature
+   查詢: nvidia_smi_temperature_gpu{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+7. Memory Utilization %
+   查詢: nvidia_smi_utilization_memory_ratio{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+8. Driver Version
+   查詢: nvidia_smi_gpu_info{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+9. Vbios Version
+   查詢: nvidia_smi_gpu_info{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+10. Throttle Reasons
+   查詢: nvidia_smi_clocks_event_reasons_gpu_idle{uuid="$gpu"} or nvidia_smi_clocks_throttle_reasons_gpu_idle{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+11. Throttle Reasons
+   查詢: nvidia_smi_clocks_event_reasons_hw_thermal_slowdown{uuid="$gpu"} or nvidia_smi_clocks_throttle_reasons_hw_thermal_slowdown{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+12. Throttle Reasons
+   查詢: nvidia_smi_clocks_event_reasons_sw_power_cap{uuid="$gpu"} or nvidia_smi_clocks_throttle_reasons_sw_power_cap{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+13. Throttle Reasons
+   查詢: nvidia_smi_clocks_event_reasons_applications_clocks_setting{uuid="$gpu"} or nvidia_smi_clocks_throttle_reasons_applications_clocks_setting{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+14. Throttle Reasons
+   查詢: nvidia_smi_clocks_event_reasons_hw_power_brake_slowdown{uuid="$gpu"} or nvidia_smi_clocks_throttle_reasons_hw_power_brake_slowdown{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+15. Throttle Reasons
+   查詢: nvidia_smi_clocks_event_reasons_sw_thermal_slowdown{uuid="$gpu"} or nvidia_smi_clocks_throttle_reasons_sw_thermal_slowdown{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+16. Throttle Reasons
+   查詢: nvidia_smi_clocks_event_reasons_sync_boost{uuid="$gpu"} or nvidia_smi_clocks_throttle_reasons_sync_boost{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+17. GPU Clock Speed %
+   查詢: nvidia_smi_clocks_current_graphics_clock_hz{uuid="$gpu"} / nvidia_smi_clocks_max_graphics_clock_hz{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+18. Memory Clock Speed %
+   查詢: nvidia_smi_clocks_current_memory_clock_hz{uuid="$gpu"} / nvidia_smi_clocks_max_memory_clock_hz{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+19. Memory Allocation %
+   查詢: nvidia_smi_memory_used_bytes{uuid="$gpu"} / nvidia_smi_memory_total_bytes{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+20. Memory Utilization %
+   查詢: nvidia_smi_utilization_memory_ratio{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+21. GPU Utilization %
+   查詢: nvidia_smi_utilization_gpu_ratio{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+22. Memory Allocation
+   查詢: nvidia_smi_memory_used_bytes{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+23. Temperature
+   查詢: nvidia_smi_temperature_gpu{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+24. Power Draw
+   查詢: nvidia_smi_power_draw_watts{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+25. Fan Speed %
+   查詢: nvidia_smi_fan_speed_ratio{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+26. Graphics Clock Speed
+   查詢: nvidia_smi_clocks_current_graphics_clock_hz{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+27. Video Clock Speed
+   查詢: nvidia_smi_clocks_current_video_clock_hz{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+28. SM Clock Speed
+   查詢: nvidia_smi_clocks_current_sm_clock_hz{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+29. Memory Clock Speed
+   查詢: nvidia_smi_clocks_current_memory_clock_hz{uuid="$gpu"}
+   數據源: {'type': 'prometheus', 'uid': '${DS_PROMETHEUS}'}
+
+
+## 變量比較
+
+### GPU 儀表板變量
+- job: label_values(nvidia_smi_index, job)
+- node: label_values(nvidia_smi_index{job="$job"},instance)
+- gpu: label_values(nvidia_smi_index{instance="$node"},uuid)
+
+### 合併儀表板變量
+- datasource: No definition
+- job: 
+- nodename: label_values(node_uname_info{job="$job"}, nodename)
+- node: label_values(node_uname_info{job="$job", nodename="$nodename"}, instance)
+- diskdevices: No definition
+- gpu: label_values(nvidia_smi_index{instance="$node"},uuid)
