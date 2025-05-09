@@ -1,16 +1,20 @@
 # prometheus-grafana-installer
-
+```
 sudo chmod +x install_prometheus_ubuntu.sh
 sudo ./install_prometheus_ubuntu.sh
-
+```
+```
 sudo chmod +x install_node_exporter_ubuntu.sh
 sudo ./install_node_exporter_ubuntu.sh
-
+```
+```
 sudo chmod +x install_gpu_exporter_ubuntu.sh
 sudo ./install_gpu_exporter_ubuntu.sh
+```
 
-
+```
 sudo nano /etc/prometheus/prometheus.yml
+```
 
 ```
 global:
@@ -33,9 +37,9 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9835']
 ```
-
+```
 sudo systemctl restart prometheus
-
+```
 
 http://your-server-ip:9090
 
